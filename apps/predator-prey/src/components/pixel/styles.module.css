@@ -1,0 +1,54 @@
+.root {
+    width: 25px;
+    height: 25px;
+    outline: 1px solid #2a9d9086;
+    content: '';
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content: '';
+}
+
+.prey {
+    background-color: #e9c46a;
+}
+
+.predator {
+    background-color: #e76f51;
+}
+
+.possible-prey {
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    border: 3px solid #e9c46a;
+}
+
+.possible-predator {
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    border: 3px solid #e76f51;
+}
+
+@media only screen and (max-width: 700px) {
+    .root {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media only screen and (max-width: 525px) {
+    .root {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .root {
+        width: 10px;
+        height: 10px;
+    }
+}
