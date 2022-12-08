@@ -2,7 +2,11 @@ import React from 'react';
 import styles from './styles.module.css';
 import { Pixel } from '../pixel';
 
-export const Map = (props) => {
+type MapProps = {
+    map: string[][];
+}
+
+export const Map = (props: MapProps) => {
     return (
         <div className={styles.root}>
             <div className={styles.grid}>

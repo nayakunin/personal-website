@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { mapSelector } from '../../redux/selectors';
+import { useAppSelector } from '../../redux';
 import styles from './styles.module.css';
 
-export const Info = (props) => {
-    const mapState = useSelector(mapSelector);
+export const Info = () => {
+    const mapState = useAppSelector(state => state.map);
     const [preysAvg, setPreysAvg] = useState(1);
     const [predatorsAvg, setPredatorsAvg] = useState(1);
-
 
     useEffect(() => {
         if (mapState.preyData.length > 1) {

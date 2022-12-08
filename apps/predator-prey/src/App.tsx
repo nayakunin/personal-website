@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
   import { useDispatch, useSelector } from "react-redux";
-  import { initMap, step, addPredator } from './redux/actions';
+  import { init, step, addPredator, useAppSelector } from './redux';
   import { Map } from './components/map';
   import { Selectors } from './components/selectors';
   import { Header } from './components/header';
@@ -9,9 +9,9 @@ import React, { useEffect } from 'react';
   import { Description } from './components/description';
   import styles from './App.module.css';
 
-export const App = (props) => {
+export const App = () => {
     const dispatch = useDispatch();
-    const mapState = useSelector(state => state.map);
+    const mapState = useAppSelector((state) => state.map);
 
     useEffect(() => {
         if (!localStorage.length) {
@@ -31,7 +31,7 @@ export const App = (props) => {
             return () => clearInterval(interval);
         } else {
             // Init map
-            dispatch(initMap());
+            dispatch(init());
         }
     }, [dispatch, mapState]);
 
@@ -45,13 +45,13 @@ export const App = (props) => {
                     />
                 </section>
                 <section className={styles['stats-container']}>
-                    <div className={styles['stats-block']}>
+                    {/* <div className={styles['stats-block']}>
                         <LineChart
                             preys={mapState.preyData}
                             predators={mapState.predatorData}
                             labels={mapState.chartLabels}
                         />
-                    </div>
+                    </div> */}
                     <div className={styles['stats-block']}>
                         <Selectors />
                     </div>

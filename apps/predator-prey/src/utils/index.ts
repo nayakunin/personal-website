@@ -1,6 +1,6 @@
-import _ from 'lodash';
+import _, { sample } from 'lodash';
 
-export const generate2dArray = (width, height, value = 'empty') => {
+export const generate2dArray = (width: number, height: number, value = 'empty') => {
     const result = [];
     for (let i = 0; i < height; i++) {
         const tmp = [];
@@ -13,12 +13,12 @@ export const generate2dArray = (width, height, value = 'empty') => {
     return result;
 }
 
-export const copy = (ar) => ar.map(a => [...a]);
+export const copy = <T>(ar: T[][]) => ar.map(a => [...a]);
 
-export const getNewPreyPos = (x, y, map) => {
+export const getNewPreyPos = (x: number, y: number, map: string[][]) => {
     const mapHeight = map.length;
     const mapWidth = map[0].length;
-    const possibleMoves = [];
+    const possibleMoves = [] as number[][];
 
     // Top
     if (y > 0 && map[x][y - 1] === 'empty') {
@@ -42,20 +42,21 @@ export const getNewPreyPos = (x, y, map) => {
         && map[x + 1][y - 1] === 'empty'
         && map[x - 1][y - 1] === 'empty'
         && map[x - 1][y + 1] === 'empty') {
-        const newBabyPreyPos = _.sample(possibleMoves);
+        const newBabyPreyPos = sample(possibleMoves) as number[];
         return [newBabyPreyPos, [x, y]];
     }
     if (!possibleMoves.length) {
-        return false;
+        return;
     }
-    return [_.sample(possibleMoves)];
+
+    return [sample(possibleMoves) as number[]];
 };
 
-export const getNewPredatorPos = (x, y, map) => {
+export const getNewPredatorPos = (x: number, y: number, map: string[][]) => {
     const mapHeight = map.length;
     const mapWidth = map[0].length;
-    const possibleMoves = [];
-    const possibleReplications = [];
+    const possibleMoves = [] as number[][];
+    const possibleReplications = [] as number[][];
 
     // Prey attack
     // Top
@@ -114,10 +115,10 @@ export const getNewPredatorPos = (x, y, map) => {
             if (map[x][y - 1] === 'empty') possibleMoves.push([x, y - 1]);
         }
         if (!possibleMoves.length) {
-            return false;
+            return;
         }
-        return [_.sample(possibleMoves)]
+        return [sample(possibleMoves) as number[]]
     } else {
-        return [_.sample(possibleReplications), [x, y]];
+        return [sample(possibleReplications) as number[], [x, y]];
     }
 };
