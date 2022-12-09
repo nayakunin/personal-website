@@ -51,7 +51,7 @@ const initialState: MapState = {
     x: INIT_X,
     y: INIT_Y,
   },
-  speed: INIT_SPEED * 1000,
+  speed: INIT_SPEED,
   currentMap: [],
   nextMap: [],
   isMapCreated: false,
@@ -70,7 +70,7 @@ const mapSlice = createSlice({
       state.isMapCreated = true;
     },
     step: (state) => {
-      state.iteration + 1;
+      state.iteration += 1;
 
       for (let col = 0; col < state.currentMap.length; col++) {
         const col_arr = state.currentMap[col];

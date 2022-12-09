@@ -1,3 +1,4 @@
+import React from 'react';
 import { Pixel } from "./pixel";
 
 type MapProps = {

@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   preyExampleMoveMap1,
   preyExampleMoveMap2,

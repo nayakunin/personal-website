@@ -1,14 +1,9 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { init, step, addPredator, useAppSelector } from "./redux";
-import { Map } from "./components/map";
-import { Selectors } from "./components/selectors";
-import { Header } from "./components/header";
-import { LineChart } from "./components/line-chart";
-import { Info } from "./components/info";
-import { Description } from "./components/description";
+import { Map, Selectors, Header, LineChart, Info, Description } from "./components";
 
-import './index.css';
+import "./index.css";
 import { StatsBlock } from "./components/stats-block";
 
 export const App = () => {
@@ -41,20 +36,20 @@ export const App = () => {
   }, [dispatch, mapState]);
 
   return (
-    <div className='w-full p-4'>
+    <div className="w-full p-4">
       <Header />
       <main className="m-auto max-w-7xl grid grid-cols-1 gap-8 xl:grid-cols-2">
-        <section className='relative flex flex-col justify-start items-center'>
+        <section className="relative flex flex-col justify-start items-center">
           <Map map={mapState.currentMap} />
         </section>
-        <section className='flex flex-col justify-start items-start overflow-y-scroll max-h-{90vh} gap-y-10'>
-          {/* <div className={styles['stats-block']}>
-                        <LineChart
-                            preys={mapState.preyData}
-                            predators={mapState.predatorData}
-                            labels={mapState.chartLabels}
-                        />
-                    </div> */}
+        <section className="flex flex-col justify-start items-start overflow-y-scroll max-h-[90vh]">
+          <StatsBlock>
+            <LineChart
+              preys={mapState.preyData}
+              predators={mapState.predatorData}
+              labels={mapState.chartLabels}
+            />
+          </StatsBlock>
           <StatsBlock>
             <Selectors />
           </StatsBlock>

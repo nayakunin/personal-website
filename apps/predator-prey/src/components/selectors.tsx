@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Slider } from "./slider";
 import { changeSpeed, useAppSelector } from "../redux";
@@ -26,23 +26,29 @@ export const Selectors = () => {
   }, [dispatch, speed]);
 
   return (
-    <div className='px-4 w-full'>
-      <h4 className='mr-1 inline'>Время между итерациями:</h4>
+    <div className="px-4 w-full">
+      <h4 className="mr-1 inline">Время между итерациями:</h4>
       <Slider
         defaultValue={INIT_SPEED}
-        // getAriaValueText={value => value}
+        getAriaValueText={value => `${value} ms`}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
-        step={0.1}
+        step={100}
         min={MIN_MAP_SPEED}
         max={MAX_MAP_SPEED}
-        onChange={(_, value) => setSpeed((value as number) * 1000)}
+        onChange={(_, value) => setSpeed((value as number))}
       />
-      <div className='flex justify-between'>
-        <button className='py-2 px-3 rounded-md bg-green-600 text-white' onClick={handleRestart}>
+      <div className="flex justify-between">
+        <button
+          className="py-2 px-3 rounded-md bg-green-600 text-white"
+          onClick={handleRestart}
+        >
           Перезапустить
         </button>
-        <button className='py-2 px-3 rounded-md bg-green-600 text-white' onClick={handleChange}>
+        <button
+          className="py-2 px-3 rounded-md bg-green-600 text-white"
+          onClick={handleChange}
+        >
           Поменять модель
         </button>
       </div>

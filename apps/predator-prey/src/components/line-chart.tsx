@@ -1,4 +1,26 @@
+import React from "react";
 import { Line } from "react-chartjs-2";
+
+import {
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Chart as ChartJS,
+  ChartDataset,
+} from "chart.js";
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 type LineChartProps = {
   preys: any;
@@ -7,18 +29,20 @@ type LineChartProps = {
 };
 
 export const LineChart = ({ preys, predators, labels }: LineChartProps) => {
-  const datasets =
+  const datasets: ChartDataset<"line", any>[] =
     localStorage.getItem("isPreyOnly") === "0"
       ? [
           {
             label: "Жертвы",
             data: preys,
             backgroundColor: "#e9c46a",
+            borderColor: "#e9c46a",
           },
           {
             label: "Хищники",
             data: predators,
             backgroundColor: "#e76f51",
+            borderColor: "#e76f51",
           },
         ]
       : [
@@ -26,62 +50,25 @@ export const LineChart = ({ preys, predators, labels }: LineChartProps) => {
             label: "Жертвы",
             data: preys,
             backgroundColor: "#e9c46a",
+            borderColor: "#e9c46a",
           },
         ];
 
   return (
     <Line
       data={{
-        labels: labels,
+        labels,
         datasets,
       }}
       options={{
-        legend: {
-          display: true,
-          labels: {
-            fontFamily: "Roboto Mono",
-            fontColor: "rgb(241, 241, 241)",
+        plugins: {
+          legend: {
+            labels: {
+              font: () => ({
+                family: "Roboto Mono",
+              }),
+            },
           },
-        },
-        scales: {
-          yAxes: [
-            {
-              gridLines: {
-                display: true,
-                color: "rgba(241, 241, 241, 0.3)",
-              },
-              ticks: {
-                fontColor: "rgb(241, 241, 241)",
-                fontFamily: "Roboto Mono",
-              },
-              scaleLabel: {
-                display: true,
-                labelString: "Популяция",
-                fontColor: "rgb(241, 241, 241)",
-                fontFamily: "Roboto Mono",
-                fontSize: 16,
-              },
-            },
-          ],
-          xAxes: [
-            {
-              gridLines: {
-                display: true,
-                color: "rgb(241, 241, 241, 0.3)",
-              },
-              ticks: {
-                fontColor: "rgb(241, 241, 241)",
-                fontFamily: "Roboto Mono",
-              },
-              scaleLabel: {
-                display: true,
-                labelString: "Время существования модели",
-                fontColor: "rgb(241, 241, 241)",
-                fontFamily: "Roboto Mono",
-                fontSize: 16,
-              },
-            },
-          ],
         },
       }}
     />
