@@ -1,4 +1,4 @@
-import _, { sample } from 'lodash';
+import { random, sample } from 'lodash';
 
 export const generate2dArray = (width: number, height: number, value = 'empty') => {
     const result = [];
@@ -9,7 +9,7 @@ export const generate2dArray = (width: number, height: number, value = 'empty') 
         }
         result.push(tmp);
     }
-    result[_.random(width - 1)][_.random(height - 1)] = 'prey';
+    result[random(width - 1)][random(height - 1)] = 'prey';
     return result;
 }
 

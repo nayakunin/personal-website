@@ -1,4 +1,3 @@
-import React from "react";
 import { Line } from "react-chartjs-2";
 
 type LineChartProps = {
@@ -29,8 +28,6 @@ export const LineChart = ({ preys, predators, labels }: LineChartProps) => {
             backgroundColor: "#e9c46a",
           },
         ];
-
-  console.log(preys, predators, labels);
 
   return (
     <Line
