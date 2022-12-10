@@ -1,8 +1,9 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useCallback, useEffect,useState } from "react";
 import { useDispatch } from "react-redux";
-import { Slider } from "./slider";
+
+import { INIT_SPEED,MAX_MAP_SPEED, MIN_MAP_SPEED } from "../constants";
 import { changeSpeed, useAppSelector } from "../redux";
-import { MAX_MAP_SPEED, MIN_MAP_SPEED, INIT_SPEED } from "../constants";
+import { Slider } from "./slider";
 
 export const Selectors = () => {
   const dispatch = useDispatch();

@@ -1,17 +1,17 @@
+import {
+  CategoryScale,
+  Chart as ChartJS,
+  ChartDataset,
+  Legend,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
+} from "chart.js";
 import React from "react";
 import { Line } from "react-chartjs-2";
 
-import {
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-  Chart as ChartJS,
-  ChartDataset,
-} from "chart.js";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -23,13 +23,13 @@ ChartJS.register(
 );
 
 type LineChartProps = {
-  preys: any;
-  predators: any;
-  labels: any;
+  preys: number[];
+  predators: number[];
+  labels: string[];
 };
 
 export const LineChart = ({ preys, predators, labels }: LineChartProps) => {
-  const datasets: ChartDataset<"line", any>[] =
+  const datasets: ChartDataset<"line", unknown>[] =
     localStorage.getItem("isPreyOnly") === "0"
       ? [
           {

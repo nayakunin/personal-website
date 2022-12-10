@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { flattenDeep, random } from "lodash";
+
 import {
-  INIT_WIDTH,
   INIT_HEIGHT,
+  INIT_SPEED,
+  INIT_WIDTH,
   INIT_X,
   INIT_Y,
-  INIT_SPEED,
 } from "../../constants";
 import {
   copy,

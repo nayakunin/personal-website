@@ -1,10 +1,11 @@
+import "./index.css";
+
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { init, step, addPredator, useAppSelector } from "./redux";
-import { Map, Selectors, Header, LineChart, Info, Description } from "./components";
 
-import "./index.css";
+import { Description,Header, Info, LineChart, Map, Selectors } from "./components";
 import { StatsBlock } from "./components/stats-block";
+import { addPredator, init, step, useAppSelector } from "./redux";
 
 export const App = () => {
   const dispatch = useDispatch();

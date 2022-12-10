@@ -1,22 +1,23 @@
 import React from 'react';
+
 import {
-  preyExampleMoveMap1,
-  preyExampleMoveMap2,
-  preyExampleReplicationMap1,
-  preyExampleReplicationMap2,
-  preyExampleDeathMap1,
-  preyExampleDeathMap2,
-  predatorExampleMoveMap1,
-  predatorExampleMoveMap2,
-  predatorExampleReplicationMap1,
-  predatorExampleReplicationMap2,
   predatorExampleDeath1,
   predatorExampleDeath2,
   predatorExampleDeath3,
   predatorExampleDeath4,
+  predatorExampleMoveMap1,
+  predatorExampleMoveMap2,
+  predatorExampleReplicationMap1,
+  predatorExampleReplicationMap2,
+  preyExampleDeathMap1,
+  preyExampleDeathMap2,
+  preyExampleMoveMap1,
+  preyExampleMoveMap2,
+  preyExampleReplicationMap1,
+  preyExampleReplicationMap2,
 } from "../constants";
-import { Map } from "./map";
 import { ReactComponent as Arrow } from "../icons/next.svg";
+import { Map } from "./map";
 
 type RowProps = {
   title: string;
