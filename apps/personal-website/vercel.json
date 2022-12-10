@@ -3,6 +3,10 @@
     {
       "source": "/projects/predator-prey",
       "destination": "https://personal-website-predator-prey.vercel.app/"
+    },
+    {
+      "source": "/projects/predator-prey/assets",
+      "destination": "https://personal-website-predator-prey.vercel.app/assets"
     }
   ]
 }
