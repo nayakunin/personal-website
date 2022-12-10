@@ -5,12 +5,14 @@ import BaseHead from "@/components/BaseHead.astro";
 import Education from "@/components/resume/Education.astro";
 import Header from "@/components/resume/Header.astro";
 import WorkExperience from "@/components/resume/WorkExperience.astro";
+
+import { personalInfo } from 'shared';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title="Nikita Iakunin Resume" />
+    <BaseHead title={`${personalInfo.getName('full')} Resume`} />
   </head>
 
   <body class="w-[1000px] m-auto p-12">
