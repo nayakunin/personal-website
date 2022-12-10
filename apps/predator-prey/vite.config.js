@@ -5,8 +5,5 @@ import svgr from 'vite-plugin-svgr';
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/projects/predator-prey/',
-  plugins: [svgr(), react()],
-  build: {
-    sourcemap: true,
-  },
+  plugins: [svgr(), react()]
 })
