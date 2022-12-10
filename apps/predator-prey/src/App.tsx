@@ -3,7 +3,14 @@ import "./index.css";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { Description,Header, Info, LineChart, Map, Selectors } from "./components";
+import {
+  Description,
+  Header,
+  Info,
+  LineChart,
+  Map,
+  Selectors,
+} from "./components";
 import { StatsBlock } from "./components/stats-block";
 import { addPredator, init, step, useAppSelector } from "./redux";
 

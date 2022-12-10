@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   predatorExampleDeath1,
@@ -29,11 +29,11 @@ type RowProps = {
 const Row = ({ description, mapAfter, mapBefore, title }: RowProps) => (
   <div>
     <h4>{title}:</h4>
-    <div className='px-4'>
+    <div className="px-4">
       <p>{description}</p>
-      <div className='mt-3 flex justify-between relative'>
+      <div className="mt-3 flex justify-between relative">
         <Map map={mapBefore} />
-        <Arrow className='w-8 fill-slate-600' />
+        <Arrow className="w-8 fill-slate-600" />
         <Map map={mapAfter} />
       </div>
     </div>
@@ -42,9 +42,9 @@ const Row = ({ description, mapAfter, mapBefore, title }: RowProps) => (
 
 export const Description = () => {
   return (
-    <div className='px-4'>
+    <div className="px-4">
       <h3>Пояснения:</h3>
-      <div className='mt-5 px-4 flex flex-col gap-y-8'>
+      <div className="mt-5 px-4 flex flex-col gap-y-8">
         <Row
           title="Движение жертвы"
           description="Жертва пойдет в одну из соседних клеток"

@@ -1,10 +1,7 @@
 module.exports = {
-  plugins: ["prettier", "react", "@typescript-eslint", "simple-import-sort", "import"],
+  plugins: ["prettier", "@typescript-eslint", "simple-import-sort", "import"],
   extends: [
-    "next",
     "turbo",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
@@ -36,8 +33,5 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "@typescript-eslint/consistent-type-definitions": 0,
-    "react/prop-types": 0,
-    "@next/next/no-html-link-for-pages": "off",
-    "react/jsx-key": "off",
   },
 };

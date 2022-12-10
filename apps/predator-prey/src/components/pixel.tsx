@@ -1,5 +1,5 @@
 import cx from "classnames";
-import React from 'react';
+import React from "react";
 
 type PixelProps = {
   map: string[][];

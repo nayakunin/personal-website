@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect,useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { INIT_SPEED,MAX_MAP_SPEED, MIN_MAP_SPEED } from "../constants";
+import { INIT_SPEED, MAX_MAP_SPEED, MIN_MAP_SPEED } from "../constants";
 import { changeSpeed, useAppSelector } from "../redux";
 import { Slider } from "./slider";
 
@@ -31,13 +31,13 @@ export const Selectors = () => {
       <h4 className="mr-1 inline">Время между итерациями:</h4>
       <Slider
         defaultValue={INIT_SPEED}
-        getAriaValueText={value => `${value} ms`}
+        getAriaValueText={(value) => `${value} ms`}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
         step={100}
         min={MIN_MAP_SPEED}
         max={MAX_MAP_SPEED}
-        onChange={(_, value) => setSpeed((value as number))}
+        onChange={(_, value) => setSpeed(value as number)}
       />
       <div className="flex justify-between">
         <button
