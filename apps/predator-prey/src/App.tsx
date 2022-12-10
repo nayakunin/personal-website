@@ -1,18 +1,11 @@
-import "./index.css";
+import './index.css';
 
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-import {
-  Description,
-  Header,
-  Info,
-  LineChart,
-  Map,
-  Selectors,
-} from "./components";
-import { StatsBlock } from "./components/stats-block";
-import { addPredator, init, step, useAppSelector } from "./redux";
+import { Description, Header, Info, LineChart, Map, Selectors } from './components';
+import { StatsBlock } from './components/stats-block';
+import { addPredator, init, step, useAppSelector } from './redux';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -20,7 +13,7 @@ export const App = () => {
 
   useEffect(() => {
     if (!localStorage.length) {
-      localStorage.setItem("isPreyOnly", "0");
+      localStorage.setItem('isPreyOnly', '0');
     }
   });
 
@@ -29,10 +22,7 @@ export const App = () => {
       // World loop
       const interval = setInterval(() => {
         dispatch(step());
-        if (
-          localStorage.getItem("isPreyOnly") === "0" &&
-          mapState.iteration % 25 === 0
-        ) {
+        if (localStorage.getItem('isPreyOnly') === '0' && mapState.iteration % 25 === 0) {
           dispatch(addPredator());
         }
       }, mapState.speed);

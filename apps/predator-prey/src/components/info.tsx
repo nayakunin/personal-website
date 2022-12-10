@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { useAppSelector } from "../redux";
+import { useAppSelector } from '../redux';
 
 type ListItemProps = {
   title: string;
@@ -28,12 +28,8 @@ export const Info = () => {
     }
     if (mapState.predatorData.length > 1) {
       setPredatorsAvg(
-        mapState.predatorData
-          .slice(-100, -1)
-          .reduce((sum, curr) => sum + curr) /
-          (mapState.predatorData.length < 100
-            ? mapState.predatorData.length
-            : 100)
+        mapState.predatorData.slice(-100, -1).reduce((sum, curr) => sum + curr) /
+          (mapState.predatorData.length < 100 ? mapState.predatorData.length : 100)
       );
     }
   }, [mapState, setPreysAvg, setPredatorsAvg]);
@@ -41,20 +37,14 @@ export const Info = () => {
   return (
     <div className="px-4">
       <ul className="flex flex-col gap-y-2.5">
-        <ListItem
-          title="Среднее количество жертв за последние 100 итераций"
-          value={preysAvg}
-        />
-        {localStorage.getItem("isPreyOnly") === "0" && (
+        <ListItem title="Среднее количество жертв за последние 100 итераций" value={preysAvg} />
+        {localStorage.getItem('isPreyOnly') === '0' && (
           <ListItem
             title="Среднее количество хищников за последние 100 итераций"
             value={predatorsAvg}
           />
         )}
-        <ListItem
-          title="Площадь мира"
-          value={mapState.size.width * mapState.size.height}
-        />
+        <ListItem title="Площадь мира" value={mapState.size.width * mapState.size.height} />
       </ul>
     </div>
   );

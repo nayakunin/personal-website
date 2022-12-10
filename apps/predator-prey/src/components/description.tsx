@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   predatorExampleDeath1,
@@ -15,9 +15,9 @@ import {
   preyExampleMoveMap2,
   preyExampleReplicationMap1,
   preyExampleReplicationMap2,
-} from "../constants";
-import { ReactComponent as Arrow } from "../icons/next.svg";
-import { Map } from "./map";
+} from '../constants';
+import { ReactComponent as Arrow } from '../icons/next.svg';
+import { Map } from './map';
 
 type RowProps = {
   title: string;

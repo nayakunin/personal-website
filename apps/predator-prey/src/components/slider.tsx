@@ -1,25 +1,25 @@
-import MaterialSlider from "@material-ui/core/Slider";
-import { withStyles } from "@material-ui/core/styles";
+import MaterialSlider from '@material-ui/core/Slider';
+import { withStyles } from '@material-ui/core/styles';
 
 export const Slider = withStyles({
   root: {
-    color: "#52af77",
+    color: '#52af77',
     height: 8,
   },
   thumb: {
     height: 24,
     width: 24,
-    backgroundColor: "#fff",
-    border: "2px solid currentColor",
+    backgroundColor: '#fff',
+    border: '2px solid currentColor',
     marginTop: -8,
     marginLeft: -12,
-    "&:focus, &:hover, &$active": {
-      boxShadow: "inherit",
+    '&:focus, &:hover, &$active': {
+      boxShadow: 'inherit',
     },
   },
   active: {},
   valueLabel: {
-    left: "calc(-50% + 4px)",
+    left: 'calc(-50% + 4px)',
   },
   track: {
     height: 8,

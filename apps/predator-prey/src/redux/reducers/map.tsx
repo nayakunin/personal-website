@@ -1,19 +1,8 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { flattenDeep, random } from "lodash";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { flattenDeep, random } from 'lodash';
 
-import {
-  INIT_HEIGHT,
-  INIT_SPEED,
-  INIT_WIDTH,
-  INIT_X,
-  INIT_Y,
-} from "../../constants";
-import {
-  copy,
-  generate2dArray,
-  getNewPredatorPos,
-  getNewPreyPos,
-} from "../../utils";
+import { INIT_HEIGHT, INIT_SPEED, INIT_WIDTH, INIT_X, INIT_Y } from '../../constants';
+import { copy, generate2dArray, getNewPredatorPos, getNewPreyPos } from '../../utils';
 
 type MapState = {
   iteration: number;
@@ -43,7 +32,7 @@ const initialState: MapState = {
   predatorsCount: 0,
   preyData: [1],
   predatorData: [0],
-  chartLabels: ["0"],
+  chartLabels: ['0'],
   size: {
     width: INIT_WIDTH,
     height: INIT_HEIGHT,
@@ -60,7 +49,7 @@ const initialState: MapState = {
 };
 
 const mapSlice = createSlice({
-  name: "map",
+  name: 'map',
   initialState,
   reducers: {
     init: (state) => {
@@ -77,52 +66,49 @@ const mapSlice = createSlice({
         const col_arr = state.currentMap[col];
 
         for (let row = 0; row < col_arr.length; row++) {
-          if (state.currentMap[col][row] === "prey") {
+          if (state.currentMap[col][row] === 'prey') {
             const newPoses = getNewPreyPos(col, row, state.nextMap);
 
             if (!newPoses) {
-              state.nextMap[col][row] = "empty";
+              state.nextMap[col][row] = 'empty';
             } else {
               if (newPoses.length === 2) {
                 newPoses.forEach((pos) => {
-                  state.nextMap[pos[0]][pos[1]] = "prey";
+                  state.nextMap[pos[0]][pos[1]] = 'prey';
                 });
               } else {
-                state.nextMap[newPoses[0][0]][newPoses[0][1]] = "prey";
-                state.nextMap[col][row] = "empty";
+                state.nextMap[newPoses[0][0]][newPoses[0][1]] = 'prey';
+                state.nextMap[col][row] = 'empty';
               }
             }
 
-            if (localStorage.getItem("isPreyOnly") === "1") {
+            if (localStorage.getItem('isPreyOnly') === '1') {
               continue;
             }
           }
 
-          if (state.currentMap[col][row] === "predator") {
+          if (state.currentMap[col][row] === 'predator') {
             const newPoses = getNewPredatorPos(col, row, state.nextMap);
 
             if (!newPoses) {
-              state.nextMap[col][row] = "empty";
+              state.nextMap[col][row] = 'empty';
             } else {
               if (newPoses.length === 2) {
                 newPoses.forEach((pos) => {
-                  state.nextMap[pos[0]][pos[1]] = "predator";
+                  state.nextMap[pos[0]][pos[1]] = 'predator';
                 });
               } else {
-                state.nextMap[newPoses[0][0]][newPoses[0][1]] = "predator";
-                state.nextMap[col][row] = "empty";
+                state.nextMap[newPoses[0][0]][newPoses[0][1]] = 'predator';
+                state.nextMap[col][row] = 'empty';
               }
             }
           }
         }
       }
 
-      if (localStorage.getItem("isPreyOnly") === "1") {
+      if (localStorage.getItem('isPreyOnly') === '1') {
         const flatArray = flattenDeep(state.nextMap);
-        const deltaPreys = flatArray.reduce(
-          (sum, curr) => (curr === "prey" ? sum + 1 : sum),
-          0
-        );
+        const deltaPreys = flatArray.reduce((sum, curr) => (curr === 'prey' ? sum + 1 : sum), 0);
 
         state.preysCount = deltaPreys;
         state.preyData.push(deltaPreys);
@@ -133,12 +119,9 @@ const mapSlice = createSlice({
       }
 
       const flatArray = flattenDeep(state.nextMap);
-      const deltaPreys = flatArray.reduce(
-        (sum, curr) => (curr === "prey" ? sum + 1 : sum),
-        0
-      );
+      const deltaPreys = flatArray.reduce((sum, curr) => (curr === 'prey' ? sum + 1 : sum), 0);
       const deltaPredators = flatArray.reduce(
-        (sum, curr) => (curr === "predator" ? sum + 1 : sum),
+        (sum, curr) => (curr === 'predator' ? sum + 1 : sum),
         0
       );
 
@@ -150,9 +133,7 @@ const mapSlice = createSlice({
       state.currentMap = copy(state.nextMap);
     },
     addPredator: (state) => {
-      state.nextMap[random(state.size.width - 1)][
-        random(state.size.height - 1)
-      ] = "predator";
+      state.nextMap[random(state.size.width - 1)][random(state.size.height - 1)] = 'predator';
       state.currentMap = copy(state.nextMap);
       state.nextMap = state.nextMap;
       state.predatorsCount = state.predatorsCount + 1;

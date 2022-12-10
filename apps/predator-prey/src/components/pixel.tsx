@@ -1,5 +1,5 @@
-import cx from "classnames";
-import React from "react";
+import cx from 'classnames';
+import React from 'react';
 
 type PixelProps = {
   map: string[][];
@@ -15,14 +15,12 @@ export const Pixel = (props: PixelProps) => {
       <div
         className={cx(
           {
-            "bg-yellow-500": cellValue === "prey",
-            "bg-orange-500": cellValue === "predator",
-            "border-2 border-solid border-yellow-500":
-              cellValue === "possible-prey",
-            "border-2 border-solid border-orange-500":
-              cellValue === "possible-predator",
+            'bg-yellow-500': cellValue === 'prey',
+            'bg-orange-500': cellValue === 'predator',
+            'border-2 border-solid border-yellow-500': cellValue === 'possible-prey',
+            'border-2 border-solid border-orange-500': cellValue === 'possible-predator',
           },
-          "w-full h-full rounded-full"
+          'w-full h-full rounded-full'
         )}
       ></div>
     </div>

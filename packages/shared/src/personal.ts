@@ -1,5 +1,5 @@
 type NameParts = 'name' | 'surname' | 'full';
-type NameType = 'preferred' | 'legal'
+type NameType = 'preferred' | 'legal';
 
 const FIRST_NAME = 'Nikita';
 const LAST_NAME = 'Yakunin';
@@ -42,4 +42,4 @@ export const personalInfo = {
     tg: 'nayakunin',
     linkedinLink: 'https://www.linkedin.com/in/nikita-yakunin-30511b1b5/',
   },
-}
+};

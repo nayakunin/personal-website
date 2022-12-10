@@ -8,20 +8,12 @@ import {
   PointElement,
   Title,
   Tooltip,
-} from "chart.js";
-import React from "react";
+} from 'chart.js';
+import React from 'react';
 // eslint-disable-next-line import/no-unresolved
-import { Line } from "react-chartjs-2";
+import { Line } from 'react-chartjs-2';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 type LineChartProps = {
   preys: number[];
@@ -30,28 +22,28 @@ type LineChartProps = {
 };
 
 export const LineChart = ({ preys, predators, labels }: LineChartProps) => {
-  const datasets: ChartDataset<"line", unknown>[] =
-    localStorage.getItem("isPreyOnly") === "0"
+  const datasets: ChartDataset<'line', unknown>[] =
+    localStorage.getItem('isPreyOnly') === '0'
       ? [
           {
-            label: "Жертвы",
+            label: 'Жертвы',
             data: preys,
-            backgroundColor: "#e9c46a",
-            borderColor: "#e9c46a",
+            backgroundColor: '#e9c46a',
+            borderColor: '#e9c46a',
           },
           {
-            label: "Хищники",
+            label: 'Хищники',
             data: predators,
-            backgroundColor: "#e76f51",
-            borderColor: "#e76f51",
+            backgroundColor: '#e76f51',
+            borderColor: '#e76f51',
           },
         ]
       : [
           {
-            label: "Жертвы",
+            label: 'Жертвы',
             data: preys,
-            backgroundColor: "#e9c46a",
-            borderColor: "#e9c46a",
+            backgroundColor: '#e9c46a',
+            borderColor: '#e9c46a',
           },
         ];
 
@@ -66,7 +58,7 @@ export const LineChart = ({ preys, predators, labels }: LineChartProps) => {
           legend: {
             labels: {
               font: () => ({
-                family: "Roboto Mono",
+                family: 'Roboto Mono',
               }),
             },
           },

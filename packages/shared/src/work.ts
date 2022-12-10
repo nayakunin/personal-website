@@ -1,3 +1,3 @@
 export const work = {
-  position: 'Fullstack Developer (React/Go)'
-}
+  position: 'Fullstack Developer (React/Go)',
+};
