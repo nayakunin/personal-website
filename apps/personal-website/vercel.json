@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/projects/predator-prey",
+      "destination": "https://personal-website-predator-prey.vercel.app/"
+    }
+  ]
+}

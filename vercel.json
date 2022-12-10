@@ -1,5 +1,0 @@
-{
-  "rewrites": [
-    {"source": "/*", "destination": "https://personal-website-personal-website.vercel.app/*"}
-  ]
-}
