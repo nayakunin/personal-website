@@ -2,12 +2,12 @@
 import { personalInfo, work } from "shared";
 ---
 
-<header class="flex justify-between">
+<header class="flex flex-col xl:flex-row justify-between">
   <div>
     <h1 class="text-3xl font-bold">{personalInfo.getName("full")}</h1>
     <h2 class="text-xl">{work.position}</h2>
   </div>
-  <div class="text-right">
+  <div class="xl:text-right">
     <p>
       <a class="underline" href={`tel:${personalInfo.contacts.phone}`}
         >{personalInfo.contacts.phone}</a
