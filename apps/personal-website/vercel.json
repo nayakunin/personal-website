@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/projects/predator-prey/assets",
-      "destination": "https://personal-website-predator-prey.vercel.app/assets",
+      "source": "/projects/predator-prey/assets/:filePath",
+      "destination": "https://personal-website-predator-prey.vercel.app/assets/:filePath",
       "permanent": true
     }
   ],
