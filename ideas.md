@@ -1,0 +1,2 @@
+- Instead of just listing products with date make a vertical timeline with each significant point in life being a point
+- Add link to GitHub as a corner

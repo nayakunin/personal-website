@@ -1,0 +1,25 @@
+---
+import clsx from 'clsx';
+
+export type Props = {
+  title: string;
+  tags: {
+    content: string;
+    className: string;
+  }[];
+};
+
+const { tags, title } = Astro.props;
+---
+
+<div class="p-6 rounded bg-white border-4 border-neutral-900">
+  <p class="text-2xl">{title}</p>
+  <div class="mt-4">
+    <slot />
+  </div>
+  <div class="mt-4 flex gap-x-2">
+    {tags.map((tag) => (
+      <div class={clsx('rounded-sm px-1 py-0.5 text-sm', tag.className)}>{tag.content}</div>
+    ))}
+  </div>
+</div>
