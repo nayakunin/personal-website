@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
 import clsx from 'clsx';
+import { ReactNode } from 'react';
 
-export type Props = {
+type Props = {
   title: string;
   tags: {
     content: string;

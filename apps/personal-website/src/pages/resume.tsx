@@ -1,10 +1,10 @@
-import styles from  '../styles/resume.module.css';
-
 import { personalInfo } from 'shared';
+
 import { BaseHead } from '../components';
+import { Education } from '../components/resume/education';
 import { Header } from '../components/resume/header';
 import { WorkExperience } from '../components/resume/work-experience';
-import { Education } from '../components/resume/education';
+import styles from  '../styles/resume.module.css';
 
 const Resume = () => (
   <div className="w-[1000px] m-auto p-12">

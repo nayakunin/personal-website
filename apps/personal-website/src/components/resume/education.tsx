@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
-import styles from  '@/styles/resume.module.css';
+
+import styles from  '../../styles/resume.module.css';
 
 type Props = {
   title: string;

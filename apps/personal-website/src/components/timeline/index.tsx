@@ -1,10 +1,10 @@
-import styles from './styles.module.css';
-
 import clsx from 'clsx';
+
+import styles from './styles.module.css';
 
 const arr = [1, 2, 3];
 
-const Timeline = () => {
+export const Timeline = () => {
   return (
     <ul className="flex flex-col gap-y-5">
       {arr.map((_, i) => (
@@ -24,5 +24,3 @@ const Timeline = () => {
     </ul>
   );
 };
-
-export default Timeline;

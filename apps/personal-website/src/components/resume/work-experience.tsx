@@ -1,8 +1,9 @@
 import { format } from 'date-fns';
 import { ReactNode } from 'react';
-import styles from  '@/styles/resume.module.css';
 
-export type Props = {
+import styles from  '../../styles/resume.module.css';
+
+type Props = {
   title: string;
   dateFrom: Date;
   dateTo?: Date;

@@ -1,7 +1,7 @@
 import { personalInfo, work } from 'shared';
-import { BaseHead } from '../components';
-import { ProjectCard } from '../components/home/project-card';
-import Timeline from '../components/timeline';
+
+import { BaseHead, ProjectCard, Timeline } from '@/components';
+
 import { SITE_DESCRIPTION, SITE_TITLE } from '../config';
 
 export default function Home() {
