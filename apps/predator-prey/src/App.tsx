@@ -3,7 +3,7 @@ import './index.css';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { Description, Header, Info, LineChart, Map, Selectors } from './components';
+import { CanvasMap, Description, Header, Info, LineChart, Selectors } from './components';
 import { StatsBlock } from './components/stats-block';
 import { addPredator, init, step, useAppSelector } from './redux';
 
@@ -38,7 +38,7 @@ export const App = () => {
       <Header />
       <main className="m-auto max-w-7xl grid grid-cols-1 gap-8 xl:grid-cols-2">
         <section className="relative flex flex-col justify-start items-center">
-          <Map map={mapState.currentMap} />
+          <CanvasMap map={mapState.currentMap} />
         </section>
         <section className="flex flex-col justify-start items-start overflow-y-scroll max-h-[90vh]">
           <StatsBlock>

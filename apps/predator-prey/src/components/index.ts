@@ -1,3 +1,4 @@
+export * from './canvas-map';
 export * from './description';
 export * from './header';
 export * from './info';
