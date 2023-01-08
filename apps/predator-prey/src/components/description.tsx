@@ -43,47 +43,47 @@ const Row = ({ description, mapAfter, mapBefore, title }: RowProps) => (
 export const Description = () => {
   return (
     <div className="px-4">
-      <h3>Пояснения:</h3>
+      <h3>Explanation:</h3>
       <div className="mt-5 px-4 flex flex-col gap-y-8">
         <Row
-          title="Движение жертвы"
-          description="Жертва пойдет в одну из соседних клеток"
+          title="Prey movement"
+          description="Prey moves to one of the adjacent cells"
           mapBefore={preyExampleMoveMap1}
           mapAfter={preyExampleMoveMap2}
         />
         <Row
-          title="Размножение жертвы"
-          description="Жертва размножается, если в радиусе 1 клетки нет других агентов"
+          title="Prey replication"
+          description="Prey replicates if there are no entities in 1 cell radius"
           mapBefore={preyExampleReplicationMap1}
           mapAfter={preyExampleReplicationMap2}
         />
         <Row
-          title="Смерть жертвы"
-          description="Жертва умирает, если она ей некуда сдвинуться"
+          title="Prey death"
+          description="Prey dies if there is no place for it to move"
           mapBefore={preyExampleDeathMap1}
           mapAfter={preyExampleDeathMap2}
         />
         <Row
-          title="Движение хищника"
-          description="Хищник движется в сторону одной из жертв, находящихся на расстоянии 2 клеток по прямой или 1 клетки по диагонали"
+          title="Predator movement"
+          description="Predator moves towards nearby preys"
           mapBefore={predatorExampleMoveMap1}
           mapAfter={predatorExampleMoveMap2}
         />
         <Row
-          title="Размножение хищника"
-          description="Хищник размножается, если в соседних клетках есть жертва. Хищник съедает жертву"
+          title="Predator replication"
+          description="Predator replicates if it eats a prey"
           mapBefore={predatorExampleReplicationMap1}
           mapAfter={predatorExampleReplicationMap2}
         />
         <Row
-          title="Смерть хищника (Способ 1)"
-          description="Хищник умирает, если его движение заблокировано другими хищниками"
+          title="Predator death #1"
+          description="Predator dies if there are no places to move"
           mapBefore={predatorExampleDeath1}
           mapAfter={predatorExampleDeath2}
         />
         <Row
-          title="Смерть хищника (Способ 2)"
-          description="Хищник умирает, если в указанном периметре нет жертв"
+          title="Predator death #2"
+          description="Predator dies if there are no preys nearby"
           mapBefore={predatorExampleDeath3}
           mapAfter={predatorExampleDeath4}
         />

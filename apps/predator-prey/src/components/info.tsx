@@ -37,14 +37,14 @@ export const Info = () => {
   return (
     <div className="px-4">
       <ul className="flex flex-col gap-y-2.5">
-        <ListItem title="Среднее количество жертв за последние 100 итераций" value={preysAvg} />
+        <ListItem title="Average number of preys in the last 100 iterations" value={preysAvg} />
         {localStorage.getItem('isPreyOnly') === '0' && (
           <ListItem
-            title="Среднее количество хищников за последние 100 итераций"
+            title="Average number of predators in the last 100 iterations"
             value={predatorsAvg}
           />
         )}
-        <ListItem title="Площадь мира" value={mapState.size.width * mapState.size.height} />
+        <ListItem title="Board size" value={mapState.size.width * mapState.size.height} />
       </ul>
     </div>
   );

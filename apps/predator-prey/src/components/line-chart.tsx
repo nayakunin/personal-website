@@ -26,13 +26,13 @@ export const LineChart = ({ preys, predators, labels }: LineChartProps) => {
     localStorage.getItem('isPreyOnly') === '0'
       ? [
           {
-            label: 'Жертвы',
+            label: 'Preys',
             data: preys,
             backgroundColor: '#e9c46a',
             borderColor: '#e9c46a',
           },
           {
-            label: 'Хищники',
+            label: 'Predators',
             data: predators,
             backgroundColor: '#e76f51',
             borderColor: '#e76f51',
@@ -40,7 +40,7 @@ export const LineChart = ({ preys, predators, labels }: LineChartProps) => {
         ]
       : [
           {
-            label: 'Жертвы',
+            label: 'Preys',
             data: preys,
             backgroundColor: '#e9c46a',
             borderColor: '#e9c46a',
