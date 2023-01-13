@@ -4,7 +4,7 @@ import { BaseHead } from '../components';
 import { Education } from '../components/resume/education';
 import { Header } from '../components/resume/header';
 import { WorkExperience } from '../components/resume/work-experience';
-import styles from  '../styles/resume.module.css';
+import styles from '../styles/resume.module.css';
 
 const Resume = () => (
   <div className="w-[1000px] m-auto p-12">
@@ -22,8 +22,15 @@ const Resume = () => (
           type="Full-Time"
           techStack={['React', 'TypeScript', 'REST API']}
         >
-          <p>Backoffice sunset project</p>
-          <p>Migrating an old PHP backoffice to a new React/Typescript microfrontend</p>
+          <p>
+            Managed the deprecation of a legacy PHP backoffice from the FE side. Created a new React
+            micro frontend. Worked closely with BE engineers from several teams to align the APIs.
+            The project had a tight deadline, but we managed to deploy it in time. I was able to
+            work on several features at the time, deploying them under feature flags using the
+            proposed API. This significantly improved the overall pace of development because I
+            managed to stay unblocked for almost the whole time. The developed MFE is localized
+            using react-i18n and deployed globally using GH actions. Both I configured myself.
+          </p>
         </WorkExperience>
         <WorkExperience
           title="Middle Frontend Developer"
