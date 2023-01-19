@@ -1,14 +1,12 @@
-import axios from 'axios';
 import clsx from 'clsx';
 import { format } from 'date-fns';
 import { useFormik } from 'formik';
 import jwt from 'jsonwebtoken';
-import useSWR from 'swr';
+import { useState } from 'react';
 
 import { Message, WithId } from '@/backend/types';
 import { useAuth } from '@/hooks';
-
-const fetcher = (url: string) => axios.get(url).then((res) => res.data);
+import { trpc } from '@/utils/trpc';
 
 type MessageProps = Message;
 
@@ -18,6 +16,7 @@ const Message = ({ author, text, timestamp }: MessageProps) => {
   return (
     <div
       className={clsx('rounded bg-zinc-800 p-2 w-fit text-white', {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         'ml-auto': auth.jwt && author.id === (jwt.decode(auth.jwt) as any).id,
       })}
     >
@@ -29,25 +28,27 @@ const Message = ({ author, text, timestamp }: MessageProps) => {
 };
 
 const Chat = () => {
-  const auth = useAuth();
+  const [messages, setMessages] = useState<WithId<Message>[]>([]);
+  trpc.chat.onAdd.useSubscription(undefined, {
+    onData(data) {
+      setMessages((prev) => [...prev, data]);
+    },
+  });
+  const postMessage = trpc.chat.add.useMutation();
 
   const formik = useFormik({
     initialValues: {
       message: '',
     },
-    onSubmit: (values, props) => {
-      axios
-        .post('/api/chat/add', {
+    onSubmit: async (values, props) => {
+      try {
+        await postMessage.mutateAsync({
           text: values.message,
-          token: auth.jwt,
-        })
-        .then(() => {
-          props.resetForm();
         });
+
+        props.resetForm();
+      } catch {}
     },
-  });
-  const { data } = useSWR<{ messages: WithId<Message>[] }>('/api/chat/get', fetcher, {
-    refreshInterval: 1000,
   });
 
   return (
@@ -55,7 +56,7 @@ const Chat = () => {
       <h1 className="fixed top-0 left-0 p-4 w-full text-3xl text-white bg-zinc-900">Chat</h1>
       <div className="pt-14 pb-14 min-h-full flex justify-end flex-col flex-grow">
         <div className="pt-4 flex flex-col gap-2 overflow-y-scroll">
-          {data?.messages.map((message) => (
+          {messages.map((message) => (
             <Message key={message.id} {...message} />
           ))}
         </div>

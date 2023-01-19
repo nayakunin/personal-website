@@ -1,15 +1,13 @@
-import axios from 'axios';
-import useSWR from 'swr';
-
-const fetcher = (url: string) => axios.get(url).then((res) => res.data);
+import { trpc } from '@/utils/trpc';
 
 export default function Home() {
-  const { data, isLoading } = useSWR('/api/get', fetcher, { refreshInterval: 1000 });
-
+  const hello = trpc.hello.useQuery({ text: 'client' });
+  if (!hello.data) {
+    return <div>Loading...</div>;
+  }
   return (
-    <>
-      <button onClick={() => axios.get('/api/add')}>call {isLoading && 'loading'}</button>
-      {JSON.stringify(data, undefined, 2)}
-    </>
+    <div>
+      <p>{hello.data.greeting}</p>
+    </div>
   );
 }

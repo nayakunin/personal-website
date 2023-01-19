@@ -14,9 +14,24 @@ function getIPv4Address() {
   return '127.0.0.1';
 }
 
-const ipv4Address = getIPv4Address();
+function resolveHost(optionsHost) {
+  let host
+  if (optionsHost === undefined || optionsHost === false) {
+    // Use a secure default
+    host = 'localhost'
+  } else if (optionsHost === true) {
+    // If passed --host in the CLI without arguments
+    host = undefined // undefined typically means 0.0.0.0 or :: (listen on all IPs)
+  } else {
+    host = optionsHost
+  }
 
-const childProcess = exec(`yarn dev -- -H ${ipv4Address}`);
+  return host;
+}
+
+const ipv4Address = resolveHost();
+
+const childProcess = exec(`yarn dev -H ${ipv4Address}`);
 
 childProcess.stdout.on('data', (data) => {
   // eslint-disable-next-line no-console

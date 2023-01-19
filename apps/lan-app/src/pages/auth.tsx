@@ -1,26 +1,26 @@
-import axios from 'axios';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
 
 import { useAuth } from '@/hooks';
+import { trpc } from '@/utils/trpc';
 
 const Auth = () => {
   const router = useRouter();
   const auth = useAuth();
+
+  const authRequest = trpc.auth.login.useMutation({
+    onSuccess: (data) => {
+      auth.setJwt(data.token);
+      router.push('/chat');
+    },
+  });
 
   const formik = useFormik({
     initialValues: {
       name: '',
     },
     onSubmit: (values) => {
-      axios
-        .post<{ token: string }>('/api/auth/sign-in', {
-          name: values.name,
-        })
-        .then((response) => {
-          auth.setJwt(response.data.token);
-          router.push('/chat');
-        });
+      authRequest.mutateAsync(values);
     },
   });
 
