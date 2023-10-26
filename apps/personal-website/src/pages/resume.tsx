@@ -15,7 +15,7 @@ const Resume = () => (
         <h3>Experience</h3>
         <hr />
         <WorkExperience
-          title="Software Engineer 2"
+          title="Senior Software Engineer"
           dateFrom={new Date('August 2022')}
           location="Berlin, Germany"
           company="Delivery Hero SE"
@@ -23,13 +23,48 @@ const Resume = () => (
           techStack={['React', 'TypeScript', 'REST API']}
         >
           <p>
-            Managed the deprecation of a legacy PHP backoffice from the FE side. Created a new React
-            micro frontend. Worked closely with BE engineers from several teams to align the APIs.
-            The project had a tight deadline, but we managed to deploy it in time. I was able to
-            work on several features at the time, deploying them under feature flags using the
-            proposed API. This significantly improved the overall pace of development because I
-            managed to stay unblocked for almost the whole time. The developed MFE is localized
-            using react-i18n and deployed globally using GH actions. Both I configured myself.
+            At Delivery Hero, my role spanned a wide spectrum of frontend and backend
+            responsibilities:
+          </p>
+          <ul>
+            <li>Managed the deprecation of a legacy PHP backoffice from the frontend side.</li>
+            <li>Pioneered the development of a new React micro frontend.</li>
+            <li>
+              Engaged closely with backend engineers from multiple teams to synchronize APIs.
+            </li>
+            <li>
+              Operated under a stringent deadline, ensuring the timely deployment of the project.
+            </li>
+            <li>
+              Concurrently developed multiple features, utilizing feature flags and the proposed
+              API. This strategic approach bolstered the development pace, keeping me largely
+              unblocked throughout the project.
+            </li>
+            <li>Integrated localization into the micro frontend using react-i18n.</li>
+            <li>
+              Leveraged GH actions for global deployment, both configurations handled by me.
+            </li>
+            <li>
+              Transitioned from Material UI to an adaptable internal design system for the vendor
+              management team.
+            </li>
+            <li>
+              Established a new design system layered atop our internal platform, leading the
+              multi-team transition to this system.
+            </li>
+            <li>
+              Spearheaded the integration of internationalization for the vendor management team.
+            </li>
+            <li>
+              Contributed actively to the design system team&apos;s codebase and collaborated on
+              the creation of functional yet extendable components.
+            </li>
+            <li>Facilitated smooth migration to the new design system across different teams.</li>
+          </ul>
+          <p>
+            This role underscored my versatility, allowing me to seamlessly pivot between frontend
+            and backend tasks as required, and my commitment to meeting deadlines without
+            compromising on quality.
           </p>
         </WorkExperience>
         <WorkExperience
