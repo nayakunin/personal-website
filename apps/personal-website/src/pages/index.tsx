@@ -1,98 +1,164 @@
-import { personalInfo, work } from 'shared';
+import { personalInfo } from 'shared';
 
-import { BaseHead, ProjectCard, Timeline } from '@/components';
+import { BaseHead } from '../components';
+import { Education } from '../components/resume/education';
+import { Header } from '../components/resume/header';
+import { WorkExperience } from '../components/resume/work-experience';
+import styles from '../styles/resume.module.css';
 
-import { SITE_DESCRIPTION, SITE_TITLE } from '../config';
-
-export default function Home() {
-  return (
-    <div>
-      <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-      <main>
-        <section className="h-screen bg-neutral-900 py-10 px-16">
-          <div className="h-full relative">
-            <div className="absolute top-0 right-0">
-              <span className="text-gray-400">
-                {personalInfo.address.city}, {personalInfo.address.country}
-              </span>
-            </div>
-            <div className="flex flex-col pt-32 mx-auto w-fit">
-              <h1 className="text-4xl text-green-500 font-bold">{personalInfo.getName('full')}</h1>
-              <p className="text-8xl max-w-[950px] font-bold text-white">{work.position}</p>
-            </div>
-            <div className="absolute bottom-0 left-0">
-              <span className="text-gray-400">Projects</span>
-            </div>
-            <div className="absolute bottom-0 right-0 flex gap-x-8 text-gray-400">
-              <a href="/resume" className="hover:underline">
-                {' '}
-                Resume
-              </a>
-              <a href={personalInfo.contacts.linkedinLink} className="hover:underline">
-                {' '}
-                LinkedIn
-              </a>
-              <a href={`https://t.me/${personalInfo.contacts.tg}`} className="hover:underline">
-                Telegram
-              </a>
-            </div>
+const Resume = () => (
+  <div className="w-[1000px] m-auto p-12">
+    <BaseHead title={`${personalInfo.getName('full')} Resume`} />
+    <Header />
+    <main className="flex flex-col gap-6 pt-2">
+      <section className={styles.section}>
+        <h3>Experience</h3>
+        <hr />
+        <WorkExperience
+          title="Senior Software Engineer"
+          dateFrom={new Date('August 2022')}
+          location="Berlin, Germany"
+          company="Delivery Hero SE"
+          type="Full-Time"
+          techStack={['React', 'TypeScript', 'REST API']}
+        >
+          <p>
+            At Delivery Hero, my role spanned a wide spectrum of frontend and backend
+            responsibilities:
+          </p>
+          <ul>
+            <li>Managed the deprecation of a legacy PHP backoffice from the frontend side.</li>
+            <li>Pioneered the development of a new React micro frontend.</li>
+            <li>
+              Engaged closely with backend engineers from multiple teams to synchronize APIs.
+            </li>
+            <li>
+              Operated under a stringent deadline, ensuring the timely deployment of the project.
+            </li>
+            <li>
+              Concurrently developed multiple features, utilizing feature flags and the proposed
+              API. This strategic approach bolstered the development pace, keeping me largely
+              unblocked throughout the project.
+            </li>
+            <li>Integrated localization into the micro frontend using react-i18n.</li>
+            <li>
+              Leveraged GH actions for global deployment, both configurations handled by me.
+            </li>
+            <li>
+              Transitioned from Material UI to an adaptable internal design system for the vendor
+              management team.
+            </li>
+            <li>
+              Established a new design system layered atop our internal platform, leading the
+              multi-team transition to this system.
+            </li>
+            <li>
+              Spearheaded the integration of internationalization for the vendor management team.
+            </li>
+            <li>
+              Contributed actively to the design system team&apos;s codebase and collaborated on
+              the creation of functional yet extendable components.
+            </li>
+            <li>Facilitated smooth migration to the new design system across different teams.</li>
+          </ul>
+          <p>
+            This role underscored my versatility, allowing me to seamlessly pivot between frontend
+            and backend tasks as required, and my commitment to meeting deadlines without
+            compromising on quality.
+          </p>
+        </WorkExperience>
+        <WorkExperience
+          title="Middle Frontend Developer"
+          dateFrom={new Date('March 2020')}
+          dateTo={new Date('May 2022')}
+          location="Moscow, Russia (Hybrid)"
+          company="Avito"
+          type="Full-Time"
+          techStack={['React', 'Redux', 'JavaScript', 'TypeScript', 'Webpack', 'Go', 'PHP']}
+        >
+          <div>
+            <p>
+              Built Order Management system for professional sellers using React, Redux and
+              JavaScript, completely covered it with unit and snapshot tests with Jest.
+            </p>
+            <ul>
+              <li>Proposed its migration to TypeScript to stakeholders and implemented it.</li>
+              <li>Removed legacy PHP server. Replaced it with new Go micro-service.</li>
+            </ul>
           </div>
-        </section>
-        <section className="h-screen bg-neutral-50 py-10 px-16">
-          <div className="h-full relative">
-            <Timeline />
-          </div>
-        </section>
-        <section className="h-screen bg-neutral-50 py-10 px-16">
-          <div className="h-full relative">
-            <h2 className="text-5xl">Projects</h2>
-            <ul className="mt-10 grid grid-cols-2 gap-4">
+          <p>
+            Suggested an improvement to the way how teams in our cluster implement backoffice
+            dashboards. Conducted research and implemented new order management system for internal
+            support using React, Redux, TypeScript and micro-service architecture.
+          </p>
+          <p>Evangelized and adopted TypeScript to all projects where applicable</p>
+          <p>Embraced API driven UI, thus significantly decreasing development time</p>
+          <div>
+            <p>Help each colleague to grow</p>
+            <ul>
+              <li>By providing extensive Code Reviews</li>
               <li>
-                <ProjectCard
-                  title="Predator and Prey model visualization"
-                  tags={[
-                    {
-                      content: 'TypeScript',
-                      className: 'bg-blue-500',
-                    },
-                    {
-                      content: 'React',
-                      className: 'bg-blue-500',
-                    },
-                    {
-                      content: 'Vite',
-                      className: 'bg-blue-500',
-                    },
-                  ]}
-                >
-                  <p>Some kind of description</p>
-                </ProjectCard>
+                Organized meetups about micro-frontend architecture with webpack module federation
+                and code coverage analysis.
               </li>
               <li>
-                <ProjectCard
-                  title="Predator and Prey model visualization"
-                  tags={[
-                    {
-                      content: 'TypeScript',
-                      className: 'bg-blue-500',
-                    },
-                    {
-                      content: 'React',
-                      className: 'bg-blue-500',
-                    },
-                    {
-                      content: 'Vite',
-                      className: 'bg-blue-500',
-                    },
-                  ]}
-                >
-                  <p>Some kind of description</p>
-                </ProjectCard>
+                Mentored junior frontend developers. Held regular 1 on 1 talks, assessing current
+                problems and planning their growth
               </li>
             </ul>
           </div>
-        </section>
-      </main>
-    </div>
-  );
-}
+        </WorkExperience>
+        <WorkExperience
+          title="Fullstack Developer"
+          dateFrom={new Date('November 2020')}
+          dateTo={new Date('Febraury 2022')}
+          company="pr-mebel.ru"
+          type="Side Project"
+          techStack={['React', 'Redux', 'TypeScript', 'Next.js', 'MySQL']}
+        >
+          <p>Migrated slow legacy PHP monolithic web app to modern tech stack.</p>
+          <p>Built with React, TypeScript and Next.js, served as static generated from CDN</p>
+          <div>
+            <p>Backend with serverless functions on vercel.com</p>
+            <ul>
+              <li>REST API for sending invoices through email</li>
+              <li>GraphQL for connection to contentfulCMS</li>
+            </ul>
+          </div>
+          <p>Database was implemented using cloud first MySQL platform planetscale.com</p>
+          <p>Styling is made with emotions.js and latest version of Material UI library</p>
+          <p>Set up CI/CD with gitlab pipelines and vercel automatic deploy from git</p>
+        </WorkExperience>
+      </section>
+    </main>
+    <section className={styles.section}>
+      <h3>Education</h3>
+      <hr />
+      <Education
+        title="Bachelor’s Degree in Applied Mathematics"
+        graduated="Graduated June 2021"
+        place="Higher School of Economics"
+        location="Moscow, Russia"
+      >
+        <p>Learned C/C++, Python, OOP patterns, Data Structures, Algorithms.</p>
+      </Education>
+      <Education
+        title="Web Developer Online Course"
+        graduated="Graduated January 2020"
+        place="Yandex Practicum"
+        location="Moscow, Russia (Remote)"
+      >
+        <p>
+          Learned how to do responsive websites with HTML/CSS/JS, how to efficiently bundle them
+          with webpack and how to deploy them to github pages
+        </p>
+        <p>
+          Implemented several backend services written in Node.js with MongoDB and deployed them to
+          VPS
+        </p>
+      </Education>
+    </section>
+  </div>
+);
+
+export default Resume;
