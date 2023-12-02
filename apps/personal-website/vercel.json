@@ -4,5 +4,6 @@
       "path": "/api/check-subscriptions",
       "schedule": "35 14 * * *"
     }
-  ]
+  ],
+  "regions": ["fra1"]
 }
