@@ -3,3 +3,7 @@ export type Subscription = {
   email: string;
   amount: string;
 };
+
+export type Test = {
+  test: string;
+}
