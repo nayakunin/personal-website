@@ -1,9 +1,22 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "TELEGRAM_SUBSCRIPTIONS_BOT_TOKEN",
+    "TELEGRAM_CHAT_ID_NIKITA",
+    "SUBSCRIPTIONS_GOOGLE_SHEET_ID",
+    "SUBSCRIPTIONS_GOOGLE_SHEET_MONTHLY",
+    "SUBSCRIPTIONS_GOOGLE_SHEET_ANUAL",
+    "GCP_SERVICE_ACCOUNT_CREDENTIALS_JSON"
+  ],
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
     },
     "lint": {
       "outputs": []

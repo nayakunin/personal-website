@@ -18,7 +18,7 @@ module.exports = {
     "sourceType": "module"
   },
   rules: {
-    "no-console": "error",
+    "no-console": "warn",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "import/first": "error",
