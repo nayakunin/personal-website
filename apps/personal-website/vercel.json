@@ -2,7 +2,7 @@
   "crons": [
     {
       "path": "/api/check-subscriptions",
-      "schedule": "35 14 * * *"
+      "schedule": "42 14 * * *"
     }
   ],
   "regions": ["fra1"]
