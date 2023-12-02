@@ -34,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return;
   }
 
-  alertSubscriptions(subs);
+  await alertSubscriptions(subs);
 
   console.log(JSON.stringify(subs, null, 2));
 
