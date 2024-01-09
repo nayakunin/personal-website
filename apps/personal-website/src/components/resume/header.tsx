@@ -3,7 +3,7 @@ import { personalInfo, work } from 'shared';
 export const Header = () => (
   <header className="flex flex-row justify-between">
     <div>
-      <h1 className="text-3xl font-bold">{personalInfo.getName('full')}</h1>
+      <h1 className="text-3xl font-bold">{personalInfo.getName('full', 'legal')}</h1>
       <h2 className="text-xl">{work.position}</h2>
     </div>
     <div className="xl:text-right">

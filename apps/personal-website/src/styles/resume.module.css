@@ -7,7 +7,7 @@
 }
 
 .article {
-  @apply grid grid-cols-12 gap-4 mb-6 last-of-type:mb-0;
+  @apply grid grid-cols-12 gap-4 mb-6 last-of-type:mb-0 break-inside-avoid;
 }
 
 .article > .details {

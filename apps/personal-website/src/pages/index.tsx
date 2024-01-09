@@ -8,7 +8,7 @@ import styles from '../styles/resume.module.css';
 
 const Resume = () => (
   <div className="w-[1000px] m-auto p-12">
-    <BaseHead title={`${personalInfo.getName('full')} Resume`} />
+    <BaseHead title={`${personalInfo.getName('full', 'legal')} Resume`} />
     <Header />
     <main className="flex flex-col gap-6 pt-2">
       <section className={styles.section}>
@@ -68,7 +68,7 @@ const Resume = () => (
           </p>
         </WorkExperience>
         <WorkExperience
-          title="Middle Frontend Developer"
+          title="Frontend Engineer"
           dateFrom={new Date('March 2020')}
           dateTo={new Date('May 2022')}
           location="Moscow, Russia (Hybrid)"
