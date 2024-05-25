@@ -13,12 +13,11 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@total-typescript/tsconfig": "^1.0.4",
     "eslint-config-custom": "*",
     "prettier": "^2.8.1",
-    "turbo": "latest"
-  },
-  "engines": {
-    "node": ">=14.0.0"
+    "turbo": "latest",
+    "typescript": "^5.4.5"
   },
   "dependencies": {}
 }

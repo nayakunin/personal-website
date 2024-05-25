@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/base.json",
+  "extends": "@total-typescript/tsconfig/bundler/no-dom",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }
