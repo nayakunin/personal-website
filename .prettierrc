@@ -4,6 +4,7 @@
   "trailingComma": "all",
   "arrowParens": "always",
   "bracketSameLine": false,
-  "jsxSingleQuote": true,
-  "experimentalTernaries": true
+  "jsxSingleQuote": false,
+  "experimentalTernaries": true,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

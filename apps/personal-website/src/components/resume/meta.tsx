@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const Meta = ({ children }: Props) => {
-  return <p className='absolute top-0 left-0 text-white -z-10'>{children}</p>;
+  return <p className="absolute left-0 top-0 -z-10 text-white">{children}</p>;
 };
