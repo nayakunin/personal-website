@@ -10,14 +10,16 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@total-typescript/tsconfig": "^1.0.4",
     "eslint-config-custom": "*",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
     "prettier": "^3.2.5",
     "turbo": "latest",
     "typescript": "^5.4.5"
-  },
-  "dependencies": {}
+  }
 }
