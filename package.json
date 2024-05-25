@@ -2,10 +2,6 @@
   "name": "nayakunin",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
@@ -15,9 +11,11 @@
   },
   "devDependencies": {
     "@total-typescript/tsconfig": "^1.0.4",
+    "eslint": "^8.57.0",
     "eslint-config-custom": "*",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.5",
+    "next": "^14.2.3",
     "prettier": "^3.2.5",
     "turbo": "latest",
     "typescript": "^5.4.5"
