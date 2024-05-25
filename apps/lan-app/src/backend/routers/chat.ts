@@ -14,7 +14,7 @@ export const chat = router({
       const onAdd = (data: WithId<Message>) => {
         emit.next(data);
       };
-      
+
       ee.on('add', onAdd);
 
       return () => {
@@ -26,7 +26,7 @@ export const chat = router({
     .input(
       z.object({
         text: z.string(),
-      })
+      }),
     )
     .mutation(({ input, ctx }) => {
       const message: WithId<Message> = {

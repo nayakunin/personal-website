@@ -10,7 +10,7 @@ export const auth = router({
     .input(
       z.object({
         name: z.string(),
-      })
+      }),
     )
     .mutation(({ input }) => {
       try {

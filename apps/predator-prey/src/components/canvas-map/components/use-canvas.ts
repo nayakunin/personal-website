@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
-import { DrawFunction } from "./types";
+import { DrawFunction } from './types';
 
 export const useCanvas = (draw: DrawFunction) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -21,7 +21,7 @@ export const useCanvas = (draw: DrawFunction) => {
       frameCount++;
       draw(context, frameCount);
       animationFrameId = window.requestAnimationFrame(render);
-    }
+    };
 
     render();
 
@@ -31,4 +31,4 @@ export const useCanvas = (draw: DrawFunction) => {
   }, [draw]);
 
   return canvasRef;
-}
+};

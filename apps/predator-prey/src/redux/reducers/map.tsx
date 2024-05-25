@@ -122,7 +122,7 @@ const mapSlice = createSlice({
       const deltaPreys = flatArray.reduce((sum, curr) => (curr === 'prey' ? sum + 1 : sum), 0);
       const deltaPredators = flatArray.reduce(
         (sum, curr) => (curr === 'predator' ? sum + 1 : sum),
-        0
+        0,
       );
 
       state.preysCount = deltaPreys;

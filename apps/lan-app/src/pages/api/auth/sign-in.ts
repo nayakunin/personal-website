@@ -14,6 +14,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       } else {
         res.status(200).json({ token });
       }
-    }
+    },
   );
 }

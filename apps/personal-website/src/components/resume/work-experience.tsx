@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
 import { ReactNode } from 'react';
 
-import styles from  '../../styles/resume.module.css';
+import styles from '../../styles/resume.module.css';
 
-type Props = {
+export type WorkExperienceProps = {
   title: string;
   dateFrom: Date;
   dateTo?: Date;
@@ -23,7 +23,7 @@ export const WorkExperience = ({
   dateTo,
   location,
   children,
-}: Props) => {
+}: WorkExperienceProps) => {
   const dateTemplate = 'MMMM yyyy';
 
   const dateFromFormatted = format(dateFrom, dateTemplate);
@@ -42,9 +42,7 @@ export const WorkExperience = ({
         {location && <p>{location}</p>}
         <p className={styles.techStack}>Tech Stack: {techStack.join(', ')}</p>
       </div>
-      <div className={styles.description}>
-        {children}
-      </div>
+      <div className={styles.description}>{children}</div>
     </article>
   );
 };

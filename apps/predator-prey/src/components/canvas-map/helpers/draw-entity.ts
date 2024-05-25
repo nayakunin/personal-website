@@ -5,7 +5,7 @@ export const drawEntity = (
   height: number,
   row_index: number,
   column_index: number,
-  size: number
+  size: number,
 ) => {
   if (type === 'prey') {
     ctx.beginPath();
@@ -16,7 +16,7 @@ export const drawEntity = (
       width / size / 2,
       0,
       2 * Math.PI,
-      false
+      false,
     );
     ctx.fill();
   } else if (type === 'predator') {
@@ -28,7 +28,7 @@ export const drawEntity = (
       width / size / 2,
       0,
       2 * Math.PI,
-      false
+      false,
     );
     ctx.fill();
   }

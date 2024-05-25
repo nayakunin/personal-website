@@ -15,7 +15,7 @@
   "devDependencies": {
     "@total-typescript/tsconfig": "^1.0.4",
     "eslint-config-custom": "*",
-    "prettier": "^2.8.1",
+    "prettier": "^3.2.5",
     "turbo": "latest",
     "typescript": "^5.4.5"
   },

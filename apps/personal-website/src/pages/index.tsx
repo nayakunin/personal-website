@@ -1,25 +1,22 @@
 import { personalInfo } from 'shared';
 
-import { BaseHead } from '../components';
-import { Education } from '../components/resume/education';
-import { Header } from '../components/resume/header';
-import { WorkExperience } from '../components/resume/work-experience';
+import { Header, WorkExperience, Education, BaseHead } from '../components';
 import styles from '../styles/resume.module.css';
 
 const Resume = () => (
-  <div className="w-[1000px] m-auto p-12">
+  <div className='w-[1000px] m-auto p-12'>
     <BaseHead title={`${personalInfo.getName('full', 'legal')} Resume`} />
     <Header />
-    <main className="flex flex-col gap-6 pt-2">
+    <main className='flex flex-col gap-6 pt-2'>
       <section className={styles.section}>
         <h3>Experience</h3>
         <hr />
         <WorkExperience
-          title="Senior Software Engineer"
+          title='Senior Software Engineer'
           dateFrom={new Date('August 2022')}
-          location="Berlin, Germany"
-          company="Delivery Hero SE"
-          type="Full-Time"
+          location='Berlin, Germany'
+          company='Delivery Hero SE'
+          type='Full-Time'
           techStack={['React', 'TypeScript', 'REST API']}
         >
           <p>
@@ -29,9 +26,7 @@ const Resume = () => (
           <ul>
             <li>Managed the deprecation of a legacy PHP backoffice from the frontend side.</li>
             <li>Pioneered the development of a new React micro frontend.</li>
-            <li>
-              Engaged closely with backend engineers from multiple teams to synchronize APIs.
-            </li>
+            <li>Engaged closely with backend engineers from multiple teams to synchronize APIs.</li>
             <li>
               Operated under a stringent deadline, ensuring the timely deployment of the project.
             </li>
@@ -41,9 +36,7 @@ const Resume = () => (
               unblocked throughout the project.
             </li>
             <li>Integrated localization into the micro frontend using react-i18n.</li>
-            <li>
-              Leveraged GH actions for global deployment, both configurations handled by me.
-            </li>
+            <li>Leveraged GH actions for global deployment, both configurations handled by me.</li>
             <li>
               Transitioned from Material UI to an adaptable internal design system for the vendor
               management team.
@@ -56,8 +49,8 @@ const Resume = () => (
               Spearheaded the integration of internationalization for the vendor management team.
             </li>
             <li>
-              Contributed actively to the design system team&apos;s codebase and collaborated on
-              the creation of functional yet extendable components.
+              Contributed actively to the design system team's codebase and collaborated on the
+              creation of functional yet extendable components.
             </li>
             <li>Facilitated smooth migration to the new design system across different teams.</li>
           </ul>
@@ -68,12 +61,12 @@ const Resume = () => (
           </p>
         </WorkExperience>
         <WorkExperience
-          title="Frontend Engineer"
+          title='Frontend Engineer'
           dateFrom={new Date('March 2020')}
           dateTo={new Date('May 2022')}
-          location="Moscow, Russia (Hybrid)"
-          company="Avito"
-          type="Full-Time"
+          location='Moscow, Russia (Hybrid)'
+          company='Avito'
+          type='Full-Time'
           techStack={['React', 'Redux', 'JavaScript', 'TypeScript', 'Webpack', 'Go', 'PHP']}
         >
           <div>
@@ -109,11 +102,11 @@ const Resume = () => (
           </div>
         </WorkExperience>
         <WorkExperience
-          title="Fullstack Developer"
+          title='Fullstack Developer'
           dateFrom={new Date('November 2020')}
           dateTo={new Date('Febraury 2022')}
-          company="pr-mebel.ru"
-          type="Side Project"
+          company='pr-mebel.ru'
+          type='Side Project'
           techStack={['React', 'Redux', 'TypeScript', 'Next.js', 'MySQL']}
         >
           <p>Migrated slow legacy PHP monolithic web app to modern tech stack.</p>
@@ -135,18 +128,18 @@ const Resume = () => (
       <h3>Education</h3>
       <hr />
       <Education
-        title="Bachelor’s Degree in Applied Mathematics"
-        graduated="Graduated June 2021"
-        place="Higher School of Economics"
-        location="Moscow, Russia"
+        title='Bachelor’s Degree in Applied Mathematics'
+        graduated='Graduated June 2021'
+        place='Higher School of Economics'
+        location='Moscow, Russia'
       >
         <p>Learned C/C++, Python, OOP patterns, Data Structures, Algorithms.</p>
       </Education>
       <Education
-        title="Web Developer Online Course"
-        graduated="Graduated January 2020"
-        place="Yandex Practicum"
-        location="Moscow, Russia (Remote)"
+        title='Web Developer Online Course'
+        graduated='Graduated January 2020'
+        place='Yandex Practicum'
+        location='Moscow, Russia (Remote)'
       >
         <p>
           Learned how to do responsive websites with HTML/CSS/JS, how to efficiently bundle them

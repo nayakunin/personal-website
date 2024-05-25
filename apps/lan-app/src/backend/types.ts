@@ -5,7 +5,7 @@ export type Message = {
     id: string;
   };
   timestamp: number;
-}
+};
 
 export type User = {
   name: string;

@@ -24,23 +24,23 @@ export const Selectors = () => {
   }, [dispatch, speed]);
 
   return (
-    <div className="px-4 w-full">
-      <h4 className="mr-1 inline">Time between iterations:</h4>
+    <div className='px-4 w-full'>
+      <h4 className='mr-1 inline'>Time between iterations:</h4>
       <Slider
         defaultValue={INIT_SPEED}
         getAriaValueText={(value) => `${value} ms`}
-        aria-labelledby="discrete-slider"
-        valueLabelDisplay="auto"
+        aria-labelledby='discrete-slider'
+        valueLabelDisplay='auto'
         step={100}
         min={MIN_MAP_SPEED}
         max={MAX_MAP_SPEED}
         onChange={(_, value) => setSpeed(value as number)}
       />
-      <div className="flex justify-between">
-        <button className="py-2 px-3 rounded-md bg-green-600 text-white" onClick={handleRestart}>
+      <div className='flex justify-between'>
+        <button className='py-2 px-3 rounded-md bg-green-600 text-white' onClick={handleRestart}>
           Restart
         </button>
-        <button className="py-2 px-3 rounded-md bg-green-600 text-white" onClick={handleChange}>
+        <button className='py-2 px-3 rounded-md bg-green-600 text-white' onClick={handleChange}>
           Change model
         </button>
       </div>

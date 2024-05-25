@@ -23,29 +23,29 @@ type LineChartProps = {
 
 export const LineChart = ({ preys, predators, labels }: LineChartProps) => {
   const datasets: ChartDataset<'line', unknown>[] =
-    localStorage.getItem('isPreyOnly') === '0'
-      ? [
-          {
-            label: 'Preys',
-            data: preys,
-            backgroundColor: '#e9c46a',
-            borderColor: '#e9c46a',
-          },
-          {
-            label: 'Predators',
-            data: predators,
-            backgroundColor: '#e76f51',
-            borderColor: '#e76f51',
-          },
-        ]
-      : [
-          {
-            label: 'Preys',
-            data: preys,
-            backgroundColor: '#e9c46a',
-            borderColor: '#e9c46a',
-          },
-        ];
+    localStorage.getItem('isPreyOnly') === '0' ?
+      [
+        {
+          label: 'Preys',
+          data: preys,
+          backgroundColor: '#e9c46a',
+          borderColor: '#e9c46a',
+        },
+        {
+          label: 'Predators',
+          data: predators,
+          backgroundColor: '#e76f51',
+          borderColor: '#e76f51',
+        },
+      ]
+    : [
+        {
+          label: 'Preys',
+          data: preys,
+          backgroundColor: '#e9c46a',
+          borderColor: '#e9c46a',
+        },
+      ];
 
   return (
     <Line

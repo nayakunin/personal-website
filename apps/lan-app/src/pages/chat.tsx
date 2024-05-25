@@ -22,7 +22,7 @@ const Message = ({ author, text, timestamp }: MessageProps) => {
     >
       <div>From: {author.name}</div>
       <div>{text}</div>
-      <div className="text-end">{format(timestamp, 'HH:mm:ss')}</div>
+      <div className='text-end'>{format(timestamp, 'HH:mm:ss')}</div>
     </div>
   );
 };
@@ -52,23 +52,23 @@ const Chat = () => {
   });
 
   return (
-    <div className="p-4 min-h-screen relative flex flex-col">
-      <h1 className="fixed top-0 left-0 p-4 w-full text-3xl text-white bg-zinc-900">Chat</h1>
-      <div className="pt-14 pb-14 min-h-full flex justify-end flex-col flex-grow">
-        <div className="pt-4 flex flex-col gap-2 overflow-y-scroll">
+    <div className='p-4 min-h-screen relative flex flex-col'>
+      <h1 className='fixed top-0 left-0 p-4 w-full text-3xl text-white bg-zinc-900'>Chat</h1>
+      <div className='pt-14 pb-14 min-h-full flex justify-end flex-col flex-grow'>
+        <div className='pt-4 flex flex-col gap-2 overflow-y-scroll'>
           {messages.map((message) => (
             <Message key={message.id} {...message} />
           ))}
         </div>
-        <div className="p-2 bg-zinc-800 fixed bottom-0 left-0 w-full">
-          <form onSubmit={formik.handleSubmit} className="flex justify-between gap-2">
+        <div className='p-2 bg-zinc-800 fixed bottom-0 left-0 w-full'>
+          <form onSubmit={formik.handleSubmit} className='flex justify-between gap-2'>
             <input
-              className="p-2 bg-zinc-700 rounded text-white w-full"
-              name="message"
+              className='p-2 bg-zinc-700 rounded text-white w-full'
+              name='message'
               value={formik.values.message}
               onChange={formik.handleChange}
             />
-            <button className="p-2 bg-zinc-700 rounded text-white" type="submit">
+            <button className='p-2 bg-zinc-700 rounded text-white' type='submit'>
               submit
             </button>
           </form>

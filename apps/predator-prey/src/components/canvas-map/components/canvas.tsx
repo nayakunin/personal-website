@@ -10,7 +10,5 @@ type CanvasProps = DetailedHTMLProps<CanvasHTMLAttributes<HTMLCanvasElement>, HT
 export const Canvas = ({ draw, ...rest }: CanvasProps) => {
   const canvasRef = useCanvas(draw);
 
-  return (
-    <canvas ref={canvasRef} {...rest} />
-  );
+  return <canvas ref={canvasRef} {...rest} />;
 };

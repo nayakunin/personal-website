@@ -8,10 +8,10 @@ type MapProps = {
 
 export const Map = (props: MapProps) => {
   return (
-    <div className="flex items-center">
+    <div className='flex items-center'>
       {props.map.map((row, row_index) => {
         return (
-          <div key={row_index} className="flex flex-col items-center">
+          <div key={row_index} className='flex flex-col items-center'>
             {row.map((_, column_index) => {
               return (
                 <Pixel

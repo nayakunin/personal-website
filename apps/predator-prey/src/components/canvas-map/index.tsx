@@ -30,11 +30,11 @@ export const CanvasMap = ({ map }: MapProps) => {
         });
       });
     },
-    [map]
+    [map],
   );
 
   return (
-    <div ref={canvasContainerRef} className="w-full">
+    <div ref={canvasContainerRef} className='w-full'>
       <Canvas draw={draw} width={canvasSize} height={canvasSize} />
     </div>
   );

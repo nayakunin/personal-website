@@ -8,9 +8,9 @@ type ListItemProps = {
 };
 
 const ListItem = ({ title, value }: ListItemProps) => (
-  <li className="flex flex-col gap-y-1">
+  <li className='flex flex-col gap-y-1'>
     <h4>{title}:</h4>
-    <p className="pl-8">{value}</p>
+    <p className='pl-8'>{value}</p>
   </li>
 );
 
@@ -23,28 +23,28 @@ export const Info = () => {
     if (mapState.preyData.length > 1) {
       setPreysAvg(
         mapState.preyData.slice(-100, -1).reduce((sum, curr) => sum + curr) /
-          (mapState.preyData.length < 100 ? mapState.preyData.length : 100)
+          (mapState.preyData.length < 100 ? mapState.preyData.length : 100),
       );
     }
     if (mapState.predatorData.length > 1) {
       setPredatorsAvg(
         mapState.predatorData.slice(-100, -1).reduce((sum, curr) => sum + curr) /
-          (mapState.predatorData.length < 100 ? mapState.predatorData.length : 100)
+          (mapState.predatorData.length < 100 ? mapState.predatorData.length : 100),
       );
     }
   }, [mapState, setPreysAvg, setPredatorsAvg]);
 
   return (
-    <div className="px-4">
-      <ul className="flex flex-col gap-y-2.5">
-        <ListItem title="Average number of preys in the last 100 iterations" value={preysAvg} />
+    <div className='px-4'>
+      <ul className='flex flex-col gap-y-2.5'>
+        <ListItem title='Average number of preys in the last 100 iterations' value={preysAvg} />
         {localStorage.getItem('isPreyOnly') === '0' && (
           <ListItem
-            title="Average number of predators in the last 100 iterations"
+            title='Average number of predators in the last 100 iterations'
             value={predatorsAvg}
           />
         )}
-        <ListItem title="Board size" value={mapState.size.width * mapState.size.height} />
+        <ListItem title='Board size' value={mapState.size.width * mapState.size.height} />
       </ul>
     </div>
   );

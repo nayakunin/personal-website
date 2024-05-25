@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import styles from  '../../styles/resume.module.css';
+import styles from '../../styles/resume.module.css';
 
 type Props = {
   title: string;
@@ -18,8 +18,6 @@ export const Education = ({ graduated, location, place, title, children }: Props
       <p>{place}</p>
       <p>{location}</p>
     </div>
-    <div className={styles.description}>
-      {children}
-    </div>
+    <div className={styles.description}>{children}</div>
   </article>
 );

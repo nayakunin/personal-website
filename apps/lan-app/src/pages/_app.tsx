@@ -11,6 +11,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Component {...pageProps} />
     </AuthProvider>
   );
-}
+};
 
 export default trpc.withTRPC(App);

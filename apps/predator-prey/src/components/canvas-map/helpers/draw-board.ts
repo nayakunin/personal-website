@@ -2,7 +2,7 @@ export const drawBoard = (
   ctx: CanvasRenderingContext2D,
   width: number,
   height: number,
-  size: number
+  size: number,
 ) => {
   for (let i = 0; i <= size; i++) {
     ctx.beginPath();
