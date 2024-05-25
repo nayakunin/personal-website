@@ -16,7 +16,10 @@ export const ProjectCard = ({ tags, title, children }: Props) => (
     <div className="mt-4">{children}</div>
     <div className="mt-4 flex gap-x-2">
       {tags.map((tag) => (
-        <div key={tag.content} className={clsx('rounded-sm px-1 py-0.5 text-sm', tag.className)}>
+        <div
+          key={tag.content}
+          className={clsx('rounded-sm px-1 py-0.5 text-sm', tag.className)}
+        >
           {tag.content}
         </div>
       ))}

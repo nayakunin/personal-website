@@ -9,7 +9,6 @@ export type WorkExperienceProps = {
   dateTo?: Date;
   company: string;
   location?: string;
-  type: string;
   techStack: string[];
   children: ReactNode;
 };
@@ -19,7 +18,6 @@ export const WorkExperience = ({
   dateFrom,
   techStack,
   title,
-  type,
   dateTo,
   location,
   children,
@@ -32,12 +30,10 @@ export const WorkExperience = ({
   return (
     <article className={styles.article}>
       <div className={styles.details}>
+        <strong>{company}</strong>
         <p>{title}</p>
         <p>
           {dateFromFormatted} - {dateToFormatted}
-        </p>
-        <p>
-          {company}, {type}
         </p>
         {location && <p>{location}</p>}
         <p className={styles.techStack}>Tech Stack: {techStack.join(', ')}</p>
