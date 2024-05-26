@@ -1,4 +1,10 @@
 {
-  "printWidth": 100,
-  "singleQuote": true
+  "printWidth": 80,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "jsxSingleQuote": false,
+  "experimentalTernaries": true,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

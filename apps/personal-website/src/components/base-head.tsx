@@ -3,7 +3,7 @@ import Head from 'next/head';
 type Props = {
   title: string;
   description?: string;
-}
+};
 
 export const BaseHead = ({ title, description }: Props) => {
   return (
@@ -17,12 +17,12 @@ export const BaseHead = ({ title, description }: Props) => {
       <meta name="description" content={description} />
 
       <meta property="og:type" content="website" />
-      <meta property="og:url" content='nikita-yakunin.dev' />
+      <meta property="og:url" content="nikita-yakunin.dev" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
 
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content='nikita-yakunin.dev' />
+      <meta property="twitter:url" content="nikita-yakunin.dev" />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
     </Head>

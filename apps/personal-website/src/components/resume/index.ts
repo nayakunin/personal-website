@@ -1,4 +1,4 @@
-export * from './education';
 export * from './header';
-export * from './meta';
-export * from './work-experience';
+export * from './mdx';
+export * from './section';
+export * from './section-header';

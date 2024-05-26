@@ -2,9 +2,16 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    transpilePackages: ['shared']
-  }
-}
+  transpilePackages: ['shared'],
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/resume',
+        permanent: true,
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

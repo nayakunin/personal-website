@@ -2,23 +2,23 @@
   "name": "nayakunin",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@total-typescript/tsconfig": "^1.0.4",
+    "eslint": "^8.57.0",
     "eslint-config-custom": "*",
-    "prettier": "^2.8.1",
-    "turbo": "latest"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "dependencies": {}
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "next": "^14.2.3",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "turbo": "latest",
+    "typescript": "^5.4.5"
+  }
 }
