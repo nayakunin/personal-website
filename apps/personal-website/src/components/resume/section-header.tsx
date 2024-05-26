@@ -21,14 +21,14 @@ export const SectionHeader = ({
   const dateToFormatted = dateTo ? format(dateTo, dateTemplate) : 'Present';
 
   return (
-    <header className="flex justify-between">
+    <header className="mb-2 flex justify-between">
       <div>
         <h3>
           <strong>{title}</strong>
         </h3>
         <h4>{subtitle}</h4>
       </div>
-      <div>
+      <div className="text-end">
         <p>{location}</p>
         <p>
           {dateFromFormatted} - {dateToFormatted}
