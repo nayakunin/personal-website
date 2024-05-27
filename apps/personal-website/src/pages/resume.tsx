@@ -4,7 +4,10 @@ import { BaseHead, Header, Mdx, Section, SectionHeader } from '../components';
 
 const Resume = () => (
   <div className="m-auto w-[1000px] p-12">
-    <BaseHead title={`${personalInfo.getName('full', 'legal')} Resume`} />
+    <BaseHead
+      title={`${personalInfo.getName('full', 'legal')} Resume`}
+      description="Senior Software Enigneer | React, TypeScript, Go"
+    />
     <Header />
     <main className="flex flex-col gap-6 pt-2">
       <Section title="Experience">
