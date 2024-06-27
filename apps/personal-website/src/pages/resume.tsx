@@ -5,18 +5,24 @@ import { BaseHead, Header, Mdx, Section, SectionHeader } from '../components';
 const Resume = () => (
   <div className="m-auto w-[1000px] p-12">
     <BaseHead
-      title={`${personalInfo.getName('full', 'legal')} Resume`}
+      title={`${personalInfo.getName('full', 'preferred')} Resume`}
       description="Senior Software Enigneer | React, TypeScript, Go"
     />
     <Header />
     <main className="flex flex-col gap-6 pt-2">
       <Section title="Experience">
         <SectionHeader
+          title="HelloFresh SE"
+          subtitle="Senior Frontend Engineer"
+          location="Berlin, Germany"
+          dateFrom="Jun 2024"
+        />
+        <SectionHeader
           title="Delivery Hero SE"
           subtitle="Senior Software Engineer"
           location="Berlin, Germany"
-          dateFrom={new Date('Aug 2022')}
-          dateTo={new Date('May 2024')}
+          dateFrom="Aug 2022"
+          dateTo="May 2024"
         />
         <Mdx>{`
 - Led a team of 5 engineers maintaining ~15 internal applications
@@ -30,8 +36,8 @@ Implemented all the necessary CI/CD pipelines and other processes using GitHub A
           title="Avito"
           subtitle="Software Engineer"
           location="Moscow, Russia"
-          dateFrom={new Date('Mar 2020')}
-          dateTo={new Date('May 2022')}
+          dateFrom="Mar 2020"
+          dateTo="May 2022"
         />
         <Mdx>
           {`
@@ -48,10 +54,9 @@ support using React, Redux, TypeScript and micro-service architecture.
           title="pr-mebel.ru"
           subtitle="Fullstack Developer"
           location="Moscow, Russia"
-          dateFrom={new Date('Nov 2020')}
-          dateTo={new Date('Feb 2022')}
+          dateFrom="Nov 2020"
+          dateTo="Feb 2022"
         />
-
         <Mdx>
           {`
 - Full website rewrite using Next.js, TypeScript, React from PHP
@@ -63,15 +68,15 @@ support using React, Redux, TypeScript and micro-service architecture.
     <Section title="Education">
       <SectionHeader
         title="Go Development Bootcamp"
-        dateFrom={new Date('Feb 2023')}
-        dateTo={new Date('Jul 2023')}
+        dateFrom="Feb 2023"
+        dateTo="Jul 2023"
         subtitle="Yandex Practicum"
         location="Remote"
       />
       <SectionHeader
         title="Web Development Bootcamp"
-        dateFrom={new Date('Feb 2019')}
-        dateTo={new Date('Jan 2020')}
+        dateFrom="Feb 2019"
+        dateTo="Jan 2020"
         subtitle="Yandex Practicum"
         location="Remote"
       />
@@ -79,8 +84,8 @@ support using React, Redux, TypeScript and micro-service architecture.
         title="Bachelor’s Degree in Applied Mathematics"
         subtitle="Higher School of Economics"
         location="Moscow, Russia"
-        dateFrom={new Date('September 2017')}
-        dateTo={new Date('June 2021')}
+        dateFrom="Sep 2017"
+        dateTo="Jun 2021"
       />
     </Section>
   </div>

@@ -4,7 +4,7 @@ export const Header = () => (
   <header className="flex flex-row justify-between">
     <div>
       <h1 className="text-3xl font-bold">
-        {personalInfo.getName('full', 'legal')}
+        {personalInfo.getName('full', 'preferred')}
       </h1>
       <h2 className="text-xl">{work.position}</h2>
     </div>

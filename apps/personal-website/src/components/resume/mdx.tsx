@@ -8,11 +8,9 @@ export type MdxProps = {
 
 const mdxConverter = new Showdown.Converter();
 
-export const Mdx = ({ children }: MdxProps) => {
-  return (
-    <div
-      className={styles.markdown}
-      dangerouslySetInnerHTML={{ __html: mdxConverter.makeHtml(children) }}
-    />
-  );
-};
+export const Mdx = ({ children }: MdxProps) => (
+  <div
+    className={styles.markdown}
+    dangerouslySetInnerHTML={{ __html: mdxConverter.makeHtml(children) }}
+  />
+);
