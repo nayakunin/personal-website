@@ -1,6 +1,12 @@
 import { personalInfo } from 'shared';
 
-import { BaseHead, Header, Mdx, Section, SectionHeader } from '../components';
+import {
+  BaseHead,
+  Header,
+  Mdx,
+  Section,
+  SectionHeader,
+} from '../../components';
 
 const Resume = () => (
   <div className="m-auto w-[1000px] p-12">
