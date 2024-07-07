@@ -1,7 +1,7 @@
 {
   "name": "nayakunin",
-  "version": "0.0.0",
   "private": true,
+  "packageManager": "pnpm@9.3.0",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
