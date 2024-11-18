@@ -1,37 +1,46 @@
-import { personalInfo, work } from 'shared';
+type HeaderProps = {
+  name: string;
+  title: string;
+  phone: string;
+  email: string;
+  location: string;
+  tg: string;
+  linkedin: string;
+};
 
-export const Header = () => (
+export const Header = ({
+  email,
+  linkedin,
+  location,
+  name,
+  phone,
+  tg,
+  title,
+}: HeaderProps) => (
   <header className="flex flex-row justify-between">
     <div>
-      <h1 className="text-3xl font-bold">
-        {personalInfo.getName('full', 'preferred')}
-      </h1>
-      <h2 className="text-xl">{work.position}</h2>
+      <h1 className="text-3xl font-bold">{name}</h1>
+      <h2 className="text-xl">{title}</h2>
     </div>
     <div className="xl:text-right">
       <p>
-        <a className="underline" href={`tel:${personalInfo.contacts.phone}`}>
-          {personalInfo.contacts.phone}
+        <a className="underline" href={`tel:${phone}`}>
+          {phone}
         </a>
       </p>
       <p>
-        <a className="underline" href={`mailto:${personalInfo.contacts.email}`}>
-          {personalInfo.contacts.email}
+        <a className="underline" href={`mailto:${email}`}>
+          {email}
         </a>
       </p>
+      <p>{location}</p>
       <p>
-        {personalInfo.address.city}, {personalInfo.address.country}
-      </p>
-      <p>
-        <a
-          className="underline"
-          href={`https://t.me/${personalInfo.contacts.tg}`}
-        >
+        <a className="underline" href={`https://t.me/${tg}`}>
           Telegram
         </a>
       </p>
       <p>
-        <a className="underline" href={personalInfo.contacts.linkedinLink}>
+        <a className="underline" href={linkedin}>
           LinkedIn
         </a>
       </p>
