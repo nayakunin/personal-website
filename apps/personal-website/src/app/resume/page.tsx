@@ -68,19 +68,6 @@ support using React, Redux, TypeScript and micro-service architecture.
 - Mentored junior frontend developers.
             `}
         </Mdx>
-        <SectionHeader
-          title="pr-mebel.ru"
-          subtitle="Fullstack Developer"
-          location="Moscow, Russia"
-          dateFrom="Nov 2020"
-          dateTo="Feb 2022"
-        />
-        <Mdx>
-          {`
-- Full website rewrite using Next.js, TypeScript, React from PHP.
-- Up to 10x performance improvement.
-            `}
-        </Mdx>
       </Section>
     </main>
     <Section title="Education">
