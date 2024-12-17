@@ -28,6 +28,7 @@ const Resume = () => (
           subtitle="Senior Frontend Engineer"
           location="Berlin, Germany"
           dateFrom="Jun 2024"
+          dateTo="Dec 2024"
         />
         <Mdx>{`
 - Architected and developed a new experimentation framework for the team using CloudFlare Workers.
