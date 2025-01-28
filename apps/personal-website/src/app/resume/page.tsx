@@ -31,9 +31,9 @@ const Resume = () => (
           dateTo="Dec 2024"
         />
         <Mdx>{`
-- Architected and developed a new experimentation framework for the team using CloudFlare Workers.
+- Architected and developed a new experimentation framework for the team using CloudFlare Workers and Next.js.
 Removed the need for Marketing to involve developers for A/B testing. Was later adopted by other teams.
-- Improved the observability of the application by reworking tracing. This result in a discovery of a few 0-day issues and bugs.
+- Improved the observability of the application by reworking tracing. This resulted in a discovery of a few 0-day issues and bugs.
 - Worked on Web Vitals improvements that resulted in monetary gains by improving the architecture of the application.
           `}</Mdx>
         <SectionHeader
