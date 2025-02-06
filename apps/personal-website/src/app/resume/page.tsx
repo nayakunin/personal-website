@@ -24,6 +24,18 @@ const Resume = () => (
     <main className="flex flex-col gap-6 pt-2">
       <Section title="Experience">
         <SectionHeader
+          title="sokratic.ru"
+          subtitle="Senior Frontend Engineer"
+          location="Remote"
+          dateFrom="Dec 2024"
+        />
+        <Mdx>{`
+- Building a Gen AI presentation tool for the web.
+- Leading the frontend efforts in the team using React 18, Next.js 14
+- Migrated the project to from JavsScript to TypeScript, and from Bootstrap to Tailwind CSS and shadcn/ui.
+- Built a custom WYSIWYG editor for the project.
+          `}</Mdx>
+        <SectionHeader
           title="HelloFresh SE"
           subtitle="Senior Frontend Engineer"
           location="Berlin, Germany"
