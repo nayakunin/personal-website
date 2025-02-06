@@ -31,7 +31,7 @@ const Resume = () => (
         />
         <Mdx>{`
 - Building a Gen AI presentation tool for the web.
-- Leading the frontend efforts in the team using React 18, Next.js 14, Tanstack 
+- Leading the frontend efforts in the team using React 18, Next.js 14, Tanstack Query.
 - Migrated the project to from JavsScript to TypeScript, and from Bootstrap to Tailwind CSS and shadcn/ui.
 - Built a custom WYSIWYG editor for the project.
           `}</Mdx>
