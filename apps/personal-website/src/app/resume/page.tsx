@@ -24,10 +24,21 @@ const Resume = () => (
     <main className="flex flex-col gap-6 pt-2">
       <Section title="Experience">
         <SectionHeader
-          title="sokratic.ru"
+          title="GetYourGuide"
+          subtitle="Senior Software Engineer"
+          location="Berlin, Germany"
+          dateFrom="May 2025"
+        />
+        <Mdx>{`
+- Lead and imlpemented tens of different experiments across Web, Android, iOS with some of them driving stat sig positive GNR
+- Maintained internal SDUI framework and its implementation on all clients
+          `}</Mdx>
+        <SectionHeader
+          title="Stealth Startup"
           subtitle="Senior Frontend Engineer"
           location="Remote"
           dateFrom="Dec 2024"
+          dateTo="May 2025"
         />
         <Mdx>{`
 - Building a Gen AI presentation tool for the web.
@@ -36,7 +47,7 @@ const Resume = () => (
 - Built a custom WYSIWYG editor for the project.
           `}</Mdx>
         <SectionHeader
-          title="HelloFresh SE"
+          title="HelloFresh"
           subtitle="Senior Frontend Engineer"
           location="Berlin, Germany"
           dateFrom="Jun 2024"
@@ -49,7 +60,7 @@ Removed the need for Marketing to involve developers for A/B testing. Was later 
 - Worked on Web Vitals improvements that resulted in monetary gains by improving the architecture of the application.
           `}</Mdx>
         <SectionHeader
-          title="Delivery Hero SE"
+          title="Delivery Hero"
           subtitle="Senior Software Engineer"
           location="Berlin, Germany"
           dateFrom="Aug 2022"
