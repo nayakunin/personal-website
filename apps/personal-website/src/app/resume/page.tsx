@@ -30,8 +30,8 @@ const Resume = () => (
           dateFrom="May 2025"
         />
         <Mdx>{`
-- Lead and imlpemented tens of different experiments across Web, Android, iOS with some of them driving stat sig positive GNR
-- Maintained internal SDUI framework and its implementation on all clients
+- Lead and imlpemented tens of different experiments across Web, Android, iOS with some of them driving stat sig positive GNR.
+- Maintained internal server driven UI framework and its implementation on all clients.
           `}</Mdx>
         <SectionHeader
           title="Stealth Startup"
